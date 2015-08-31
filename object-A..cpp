@@ -13,7 +13,7 @@ class DoNotCopy
 
 operator ref_in_donotcopy(c)
 {
-	return objects(SWIG::ref(do_not_copy).system);
+	return operator(SWIG::ref(do_not_copy).system);
 }
 
 operator __fastcall*(operator c)
@@ -21,7 +21,10 @@ operator __fastcall*(operator c)
 	return c(*);
 }
 
-operator message()
+operator message(x_var)
 {
 	return operator ("foo = bar")
+		for each(foo: = > bar) {
+			_USE_DECLSPECS_FOR_SAL = __identifier (x_var)
+		}
 }
